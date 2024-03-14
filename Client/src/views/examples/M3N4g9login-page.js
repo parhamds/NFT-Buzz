@@ -90,7 +90,7 @@ export default function M3N4g9login() {
   Axios.defaults.withCredentials = true
 
   const loginUser = () => {
-    Axios.post('http://192.168.56.101:3001/M3N4g9login', {
+    Axios.post('http://localhost:3001/M3N4g9login', {
       email:email,
       pass:pass,
     }).then((response) =>{
@@ -106,7 +106,7 @@ export default function M3N4g9login() {
 
 
   useEffect(()=>{
-    Axios.get("http://192.168.56.101:3001/M3N4g9login").then((response)=>{
+    Axios.get("http://localhost:3001/M3N4g9login").then((response)=>{
       if(response.data.loggedIn == true){
         window.open("/M3N4g9access-pageinvest","_self")
       }

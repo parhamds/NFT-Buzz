@@ -114,7 +114,7 @@ const [investList, setinvestList] = useState([]);
 
 
   const Investadmin = () => {
-    Axios.post('http://192.168.56.101:3001/investadmin', {}).then((response) =>{
+    Axios.post('http://localhost:3001/investadmin', {}).then((response) =>{
       setinvestList(response.data)
       console.log(response.data)
     });
@@ -122,7 +122,7 @@ const [investList, setinvestList] = useState([]);
 
 
   useEffect(()=>{
-  Axios.get("http://192.168.56.101:3001/M3N4g9login").then((response)=>{
+  Axios.get("http://localhost:3001/M3N4g9login").then((response)=>{
     if(response.data.loggedIn == false){
       window.open("/m3#N4$g9@login","_self")
     }else{
