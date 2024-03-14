@@ -114,7 +114,7 @@ const [investList, setinvestList] = useState([]);
 
 
   const Investadmin = () => {
-    Axios.post('http://127.0.0.1:3001/investadmin', {}).then((response) =>{
+    Axios.post('http://localhost:3001/investadmin', {}).then((response) =>{
       setinvestList(response.data)
       console.log(response.data)
     });
@@ -159,7 +159,7 @@ const [rejectedid, setrejectedid] = React.useState([]);
           {/* End Mini Modal */}
 
   const approveinvest = () => {
-      Axios.post('http://127.0.0.1:3001/approveinvest', {
+      Axios.post('http://localhost:3001/approveinvest', {
         id:approvedid
       }).then(() =>{
         window.open("/M3N4g9access-pageinvest","_self")
@@ -167,7 +167,7 @@ const [rejectedid, setrejectedid] = React.useState([]);
   };
 
   const rejectinvest = () => {
-    Axios.post('http://127.0.0.1:3001/rejectinvest', {
+    Axios.post('http://localhost:3001/rejectinvest', {
       id:rejectedid
     }).then(() =>{
       window.open("/M3N4g9access-pageinvest","_self")
@@ -177,7 +177,7 @@ const [rejectedid, setrejectedid] = React.useState([]);
 
 
   useEffect(()=>{
-  Axios.get("http://127.0.0.1:3001/M3N4g9login").then((response)=>{
+  Axios.get("http://localhost:3001/M3N4g9login").then((response)=>{
     if(response.data.loggedIn == false){
       window.open("/M3N4g9login-page","_self")
     }else{

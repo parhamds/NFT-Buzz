@@ -114,7 +114,7 @@ const [nftList, setnftList] = useState([]);
 
 
   const withrawadmin = () => {
-    Axios.post('http://127.0.0.1:3001/nftadmin', {}).then((response) =>{
+    Axios.post('http://localhost:3001/nftadmin', {}).then((response) =>{
       setnftList(response.data)
       console.log(response.data)
     });
@@ -149,7 +149,7 @@ const [rejectedid, setrejectedid] = React.useState("");
           {/* End Mini Modal */}
 
   const approvenft = () => {
-      Axios.post('http://127.0.0.1:3001/approvenft', {
+      Axios.post('http://localhost:3001/approvenft', {
         id:approvedid,
         link:link
       }).then(() =>{
@@ -158,7 +158,7 @@ const [rejectedid, setrejectedid] = React.useState("");
   };
 
   const rejectnft = () => {
-    Axios.post('http://127.0.0.1:3001/rejectnft', {
+    Axios.post('http://localhost:3001/rejectnft', {
       id:rejectedid
     }).then(() =>{
       window.open("/M3N4g9access-pagenft","_self")
@@ -168,7 +168,7 @@ const [rejectedid, setrejectedid] = React.useState("");
 
 
   useEffect(()=>{
-  Axios.get("http://127.0.0.1:3001/M3N4g9login").then((response)=>{
+  Axios.get("http://localhost:3001/M3N4g9login").then((response)=>{
     if(response.data.loggedIn == false){
       window.open("/M3N4g9login-page","_self")
     }else{
