@@ -158,7 +158,7 @@ export default function ProfilePage() {
   const [nftList, setnftList] = useState([]);
 
   const collectnft = () => {
-    Axios.post('http://localhost:3001/collectnft', {
+    Axios.post('http://127.0.0.1:3001/collectnft', {
       basicid:currentuserid,
     }).then((response) =>{
         setnftList(response.data)
@@ -185,14 +185,14 @@ export default function ProfilePage() {
     if(hash=="" | investamount=="0"){
       setMiniModalFill(true)
     }else{
-    Axios.get("http://localhost:3001/login").then((response)=>{
+    Axios.get("http://127.0.0.1:3001/login").then((response)=>{
       if(response.data.loggedIn == false){
         window.open("/login-page","_self")
       }else{
         currentuserinfo = response.data.user["0"]
         currentuserid = response.data.user["0"]["id"]
         setcurrentuseridconst(currentuserid)
-        Axios.post('http://localhost:3001/invest', {
+        Axios.post('http://127.0.0.1:3001/invest', {
           investamount:investamount,
           hash:hash,
           basicid:currentuserid
@@ -211,7 +211,7 @@ export default function ProfilePage() {
   };
 
   const income0 = () => {
-    Axios.post('http://localhost:3001/income0', {
+    Axios.post('http://127.0.0.1:3001/income0', {
       basicid:currentuserid,
     }).then((response) =>{
         setIncome0List(response.data)
@@ -244,7 +244,7 @@ export default function ProfilePage() {
   };
 
   const income1 = () => {
-    Axios.post('http://localhost:3001/income1', {
+    Axios.post('http://127.0.0.1:3001/income1', {
       basicid:currentuserid,
     }).then((response) =>{
         setIncome1List(response.data)
@@ -276,7 +276,7 @@ export default function ProfilePage() {
   };
 
   const income2 = () => {
-    Axios.post('http://localhost:3001/income2', {
+    Axios.post('http://127.0.0.1:3001/income2', {
       basicid:currentuserid,
     }).then((response) =>{
         setIncome2List(response.data)
@@ -305,7 +305,7 @@ export default function ProfilePage() {
   };
 
   const income3 = () => {
-    Axios.post('http://localhost:3001/income3', {
+    Axios.post('http://127.0.0.1:3001/income3', {
       basicid:currentuserid,
     }).then((response) =>{
         setIncome3List(response.data)
@@ -348,7 +348,7 @@ export default function ProfilePage() {
   ]
 
 useEffect(()=>{
-  Axios.get("http://localhost:3001/login").then((response)=>{
+  Axios.get("http://127.0.0.1:3001/login").then((response)=>{
     if(response.data.loggedIn == false){
       window.open("/login-page","_self")
     }else{
@@ -373,7 +373,7 @@ const changeInvestAmount = (Amount)=>{investamount=Amount};
 
 const totalWithraw = () => {
   setcurrentuseridconst(currentuserid)
-  Axios.post('http://localhost:3001/totalwithraw', {
+  Axios.post('http://127.0.0.1:3001/totalwithraw', {
     basicid:currentuserid,
   }).then((response) =>{
       var sum = 0
@@ -390,7 +390,7 @@ const totalWithraw = () => {
 
 const totalRegularNFT = () => {
   setcurrentuseridconst(currentuserid)
-  Axios.post('http://localhost:3001/totalregularnft', {
+  Axios.post('http://127.0.0.1:3001/totalregularnft', {
     basicid:currentuserid,
   }).then((response) =>{
       var amount = Number(response.data.length)
@@ -402,7 +402,7 @@ const totalRegularNFT = () => {
 
 const totalPremiumNFT = () => {
   setcurrentuseridconst(currentuserid)
-  Axios.post('http://localhost:3001/totalpremiumnft', {
+  Axios.post('http://127.0.0.1:3001/totalpremiumnft', {
     basicid:currentuserid,
   }).then((response) =>{
       var amount = Number(response.data.length)
@@ -420,7 +420,7 @@ const withraw = () => {
   var minwithrawable = 50
   if (withrawamount<=maxwithrawable){
     if(withrawamount>=minwithrawable){
-    Axios.post('http://localhost:3001/withraw', {
+    Axios.post('http://127.0.0.1:3001/withraw', {
       basicid:currentuseridconst,
       wallet:walletid,
       amount:withrawamount,
@@ -452,7 +452,7 @@ const createRegularNFT = () => {
   var localNFTWallet = nftwallet
   
   if (maxwithrawable>=30){
-    Axios.post('http://localhost:3001/createRegularNFT', {
+    Axios.post('http://127.0.0.1:3001/createRegularNFT', {
       basicid:currentuseridconst,
       wallet:localNFTWallet,
       phrase:localNFTPhrase,
@@ -482,7 +482,7 @@ const createPremiumNFT = () => {
   var localNFTWallet = nftwallet
   
   if (maxwithrawable>=50){
-    Axios.post('http://localhost:3001/createPremiumNFT', {
+    Axios.post('http://127.0.0.1:3001/createPremiumNFT', {
       basicid:currentuseridconst,
       wallet:localNFTWallet,
       phrase:localNFTPhrase,
