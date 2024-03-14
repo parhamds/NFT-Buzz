@@ -1,0 +1,21 @@
+#table2 {
+    background-color: rgb(255, 255, 255);
+    border-collapse:collapse;
+    table-layout:fixed;
+    width: 100%;
+    margin: 2rem auto;
+    overflow-x: scroll;
+}
+#table2 th{
+    border: 1px solid #ddd;
+    padding: 8px;
+    white-space: nowrap;
+    text-align: center;
+}
+#table2 td{
+    border: 1px solid #ddd;
+    padding: 8px;
+    overflow-x: scroll;
+    white-space: nowrap;
+    text-align: center;
+}
