@@ -104,7 +104,7 @@ export default function RegisterPage() {
     }else{
     if (checked){
     if (refid){
-      Axios.post('http://localhost:3001/register', {
+      Axios.post('http://192.168.56.101:3001/register', {
         name:name, 
         surname:surname,
         email:email,
@@ -119,7 +119,7 @@ export default function RegisterPage() {
         }
       });
     } else {
-      Axios.post('http://localhost:3001/register', {
+      Axios.post('http://192.168.56.101:3001/register', {
         name:name, 
         surname:surname,
         email:email,

@@ -93,7 +93,7 @@ export default function LoginPage() {
     if(email=="" | pass==""){
       setMiniModalFill(true)
     }else{
-    Axios.post('http://localhost:3001/login', {
+    Axios.post('http://192.168.56.101:3001/login', {
       email:email,
       pass:pass,
     }).then((response) =>{
@@ -108,7 +108,7 @@ export default function LoginPage() {
 
 
   useEffect(()=>{
-    Axios.get("http://localhost:3001/login").then((response)=>{
+    Axios.get("http://192.168.56.101:3001/login").then((response)=>{
       if(response.data.loggedIn == true){
         window.open("/profile-page","_self")
       }
