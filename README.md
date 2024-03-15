@@ -2,6 +2,8 @@ This is one of the projects that i've done, you can use any of its components.
 
 In this site users can sign-in, register their crypto investments, the site will calculate their profit based on the auto-trader robot, and users can cash-out their profits from their portal.
 
+Here you can see the full installation tutorial on Ubuntu.
+
 # SQL Part
 
 ### create MY-SQL DB
